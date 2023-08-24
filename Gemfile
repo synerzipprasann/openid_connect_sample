@@ -12,7 +12,7 @@ gem 'rack-oauth2'
 gem 'openid_connect'
 gem 'public_suffix', '< 3.0'
 gem 'json-jwt', '<= 1.9.2'
-
+gem 'pg', '~> 0.11'
 group :development, :test do
   gem 'sqlite3'
   gem 'test-unit', '~> 3.0'
@@ -24,6 +24,8 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '~> 0.11'
+  
   gem 'rack-ssl', :require => 'rack/ssl'
 end
+
+gem 'pry-byebug'

@@ -1,5 +1,5 @@
 development: &defaults
-  issuer: http://op.dev
+  issuer: https://1904-2401-4900-1c44-f36d-b177-135f-9fba-443e.ngrok-free.app
 
 test:
   <<: *defaults

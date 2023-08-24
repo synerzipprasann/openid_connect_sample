@@ -24,6 +24,8 @@ class DiscoveryController < ApplicationController
   end
 
   def openid_configuration
+
+    puts "---------------#{IdToken.config}-------------"
     config = OpenIDConnect::Discovery::Provider::Config::Response.new(
       issuer: IdToken.config[:issuer],
       authorization_endpoint: new_authorization_url,

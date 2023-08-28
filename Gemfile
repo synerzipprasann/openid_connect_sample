@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-
+ruby '2.1.6'
 gem 'rails', '~>3.2'
 gem 'jquery-rails'
 gem 'squeel'

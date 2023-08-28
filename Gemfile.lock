@@ -186,5 +186,8 @@ DEPENDENCIES
   validate_email
   validate_url
 
+RUBY VERSION
+   ruby 2.1.6p336
+
 BUNDLED WITH
    1.17.3

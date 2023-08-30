@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120229153919) do
+ActiveRecord::Schema.define(:version => 20230830063224) do
 
   create_table "access_token_request_objects", :force => true do |t|
     t.integer  "access_token_id"
@@ -103,8 +103,15 @@ ActiveRecord::Schema.define(:version => 20120229153919) do
 
   create_table "connect_fakes", :force => true do |t|
     t.integer  "account_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "profile"
+    t.string   "locale"
+    t.string   "phone_number"
+    t.boolean  "verified"
+    t.string   "email"
+    t.string   "password"
+    t.string   "name"
   end
 
   create_table "connect_google", :force => true do |t|

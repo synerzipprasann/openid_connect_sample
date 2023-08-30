@@ -5,6 +5,12 @@ ConnectOp::Application.routes.draw do
   resources :clients, except: :show
   resources :authorizations, only: [:new, :create]
 
+  namespace :api do
+    namespace :v1 do
+      resource :sessions
+      resource :users
+    end
+  end
   namespace :connect do
     resource :fake,     only: :create
     resource :facebook, only: :show

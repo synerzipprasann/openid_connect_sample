@@ -1,9 +1,11 @@
 <footer class="page_footer">
-  <% if authenticated? %>
-    <%= form_tag session_path, method: :delete do  %>
-      <%= submit_tag 'Logout'.t %>
-    <% end %>
-  <% end %>
+
+  <% if account_signed_in? %>
+  <%= link_to 'Logout'.t, destroy_account_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Login", new_account_session_path %>
+<% end %>
+
   <ul>
     <li>
       <%= link_to 'OpenID Connect RubyGem', 'https://github.com/nov/openid_connect' %>

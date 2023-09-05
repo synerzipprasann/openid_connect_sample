@@ -1,4 +1,11 @@
 class Account < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :phone_number, :dob, :verified
   has_one :facebook, class_name: 'Connect::Facebook'
   has_one :google,   class_name: 'Connect::Google'
   has_one :fake,     class_name: 'Connect::Fake'

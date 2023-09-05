@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20230830063224) do
+ActiveRecord::Schema.define(:version => 20230905110259) do
 
   create_table "access_token_request_objects", :force => true do |t|
     t.integer  "access_token_id"
@@ -41,11 +41,27 @@ ActiveRecord::Schema.define(:version => 20230830063224) do
   create_table "accounts", :force => true do |t|
     t.string   "identifier"
     t.datetime "last_logged_in_at"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "phone_number"
+    t.boolean  "verified"
+    t.string   "name"
+    t.date     "dob"
   end
 
+  add_index "accounts", ["email"], :name => "index_accounts_on_email", :unique => true
   add_index "accounts", ["identifier"], :name => "index_accounts_on_identifier", :unique => true
+  add_index "accounts", ["reset_password_token"], :name => "index_accounts_on_reset_password_token", :unique => true
 
   create_table "authorization_request_objects", :force => true do |t|
     t.integer  "authorization_id"

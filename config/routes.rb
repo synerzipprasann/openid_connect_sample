@@ -1,5 +1,7 @@
 ConnectOp::Application.routes.draw do
-  resource :session,   only: :destroy
+  devise_for :accounts
+
+  #resource :session,   only: :destroy
   resource :dashboard, only: :show
 
   resources :clients, except: :show

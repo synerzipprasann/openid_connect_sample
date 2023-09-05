@@ -29,3 +29,6 @@ group :production do
 end
 
 gem 'pry-byebug'
+gem 'thin'
+ 
+gem 'devise'

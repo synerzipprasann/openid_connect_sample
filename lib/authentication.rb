@@ -11,9 +11,9 @@ module Authentication
   end
 
   module Helper
-    def current_account
-      @current_account
-    end
+    # def current_account
+    #   @current_account
+    # end
 
     def current_token
       @current_token

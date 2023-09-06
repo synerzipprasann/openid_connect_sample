@@ -1,4 +1,4 @@
-<footer class="page_footer">
+<!-- <footer class="page_footer">
 
   <% if account_signed_in? %>
   <%= link_to 'Logout'.t, destroy_account_session_path, method: :delete %>
@@ -24,6 +24,40 @@
     </li>
     <li>
       <small>&copy; <%= link_to 'nov matake', 'https://github.com/nov'%></small>
+    </li>
+  </ul>
+</footer> -->
+
+
+<footer class="bg-gray-800 text-white p-4">
+  <div class="flex justify-between items-center">
+    <% if account_signed_in? %>
+    <a href="<%= destroy_account_session_path %>" class="text-blue-500 hover:underline" data-method="delete">Logout</a>
+    <% else %>
+    <a href="<%= new_account_session_path %>" class="text-blue-500 hover:underline">Login</a>
+    <% end %>
+  </div>
+
+  <ul class="mt-4">
+    <li>
+      <a href="https://github.com/nov/openid_connect" class="text-blue-500 hover:underline">OpenID Connect RubyGem</a>
+    </li>
+    <li>
+      Nov's OP (
+      <a href="https://connect-op.herokuapp.com" class="text-blue-500 hover:underline">Heroku</a> /
+      <a href="https://github.com/nov/openid_connect_sample" class="text-blue-500 hover:underline">GitHub</a>
+      )
+    </li>
+    <li>
+      Nov's RP (
+      <a href="https://connect-rp.herokuapp.com" class="text-blue-500 hover:underline">Heroku</a> /
+      <a href="https://github.com/nov/openid_connect_sample_rp" class="text-blue-500 hover:underline">GitHub</a>
+      )
+    </li>
+    <li>
+      <small>
+        &copy; <a href="https://github.com/nov" class="text-blue-500 hover:underline">nov matake</a>
+      </small>
     </li>
   </ul>
 </footer>

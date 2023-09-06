@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RorSsoServer</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js' %>
+    <%= javascript_include_tag :all %>
+    <%= csrf_meta_tag %>
+    <%= viewport_meta_tag %>
+    <%= apple_app_capable_meta_tag %>
+    <%= apple_app_icon_link_tag %>
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    
+  </head>
+<body class=" font-sans">
+    <!-- Header -->
+    <div class="flex w-full">
+      <main class="w-full p-4">
+        <%= yield %>
+      </main>
+  </div>
+</body>
+</html>
+

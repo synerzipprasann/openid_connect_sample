@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  layout :set_layout
+  
   include Authentication
   include Notification
 
@@ -25,5 +27,29 @@ class ApplicationController < ActionController::Base
 
   def after_logged_in_endpoint
     session.delete(:after_logged_in_endpoint) || dashboard_url
+  end
+
+
+
+  private
+
+  def set_layout
+    # Check if the controller is a Devise controller
+    if is_devise_controller?
+      'login' # Set your Devise-specific layout here
+    else
+      'application2'  # Set your default layout here
+    end
+  end
+
+  def is_devise_controller?
+    # Check if the controller's class is a subclass of Devise's controllers
+    # You can add more Devise controllers if needed
+    [
+      Devise::SessionsController,
+      Devise::RegistrationsController,
+      Devise::PasswordsController,
+      # Add more Devise controllers here as necessary
+    ].any? { |controller| self.class <= controller }
   end
 end

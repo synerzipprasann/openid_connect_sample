@@ -7,6 +7,10 @@
   <%= hidden_field_tag :nonce, nonce %>
   <%= hidden_field_tag :request, _request_ %>
   <%= hidden_field_tag :request_uri, request_uri %>
-  <%= submit_tag "client.#{action}".t %>
+  <% if action == :deny %>
+    <%= button_tag "client.#{action}".t, class: 'text-white focus:ring-4 bg-gray-500 hover:bg-gray-600  focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800' %>
+  <% else %>
+    <%= button_tag "client.#{action}".t, class: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800' %>
+  <% end %>
   <%= hidden_field_tag action, true %>
 <% end %>

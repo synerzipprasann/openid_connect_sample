@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RorSsoServer</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js' %>
+    <%= javascript_include_tag :all %>
+    <%= csrf_meta_tag %>
+    <%= viewport_meta_tag %>
+    <%= apple_app_capable_meta_tag %>
+    <%= apple_app_icon_link_tag %>
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    
+  </head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <div class="flex w-full">
+
+
+    <!-- Sidebar -->
+    <nav class="bg-gray-800 text-white h-screen py-6 w-56 bg-gray-300 p-4">
+        <ul>
+            <li class="mb-4">
+                <a href="/" class="flex items-center px-4 py-2 text-gray-300 hover:bg-gray-600">
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="mb-4">
+              <% if account_signed_in? %>
+                <%= link_to 'Logout'.t, destroy_account_session_path, method: :delete, class: 'flex items-center px-4 py-2 text-gray-300 hover:bg-gray-600' %>
+              <% end %>
+
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="w-full p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+             <%= yield %>
+        </div>
+    </main>
+  </div>
+</body>
+</html>
+

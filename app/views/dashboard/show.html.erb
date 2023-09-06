@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
   <h2><%= 'dashboard.title'.t %></h2>
   <%= render @clients %>
 </section>
@@ -19,6 +19,32 @@
       <dt><%= 'endpoint.token'.t %></dt>
       <dd><%= access_tokens_url %></dd>
       <dt><%= 'endpoint.userinfo'.t %></dt>
+      <dd><%= user_info_url %></dd>
+    </dl>
+  </details>
+</aside> -->
+
+<section class="mt-4">
+  <h2 class="text-2xl font-semibold"><%= t('dashboard.title') %></h2>
+  <%= render @clients %>
+</section>
+
+<nav class="mt-4">
+  <p>
+    <%= link_to t('clients.new.title'), new_client_path, class: "text-blue-500 hover:underline" %>
+  </p>
+</nav>
+
+<aside class="help mt-4">
+  <h3 class="text-lg font-semibold"><%= t('help.title') %></h3>
+  <details class="mt-2">
+    <summary class="cursor-pointer"><%= t('endpoint.help') %></summary>
+    <dl class="mt-2 ml-4">
+      <dt class="font-semibold"><%= t('endpoint.authorization') %></dt>
+      <dd><%= new_authorization_url %></dd>
+      <dt class="font-semibold"><%= t('endpoint.token') %></dt>
+      <dd><%= access_tokens_url %></dd>
+      <dt class="font-semibold"><%= t('endpoint.userinfo') %></dt>
       <dd><%= user_info_url %></dd>
     </dl>
   </details>

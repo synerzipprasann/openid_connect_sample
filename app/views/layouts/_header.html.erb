@@ -1,4 +1,10 @@
-<header>
+<!-- <header>
   <h1><%= link_to 'site.title'.t, root_path %></h1>
   <p><%= 'site.description'.t %></p>
+</header> -->
+
+
+<header class="bg-blue-500 text-white p-4">
+  <h1 class="text-4xl font-semibold"><%= link_to t('site.title'), root_path %></h1>
+  <p class="mt-2"><%= t('site.description') %></p>
 </header>
